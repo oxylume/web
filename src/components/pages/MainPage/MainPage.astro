@@ -1,0 +1,13 @@
+---
+import Browse from "./Browse/Browse.svelte"
+import Connectivity from "./Connectivity/Connectivity.svelte"
+import Random from "./Random/Random.svelte"
+import Stats from "./Stats/Stats.svelte"
+---
+
+<div class=":uno: mx-4 flex gap-2">
+  <Connectivity client:load />
+  <Random client:load />
+</div>
+<Stats client:load />
+<Browse client:load pageCount={12} />

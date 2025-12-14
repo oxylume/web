@@ -1,0 +1,42 @@
+---
+import Footer from "./Footer.astro"
+import Header from "./Header.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Oxylume</title>
+    <meta property="og:title" content="Oxylume" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://oxylume.site/" />
+    <meta property="og:image" content="https://oxylume.site/og.png" />
+  </head>
+  <body class=":uno: flex flex-col min-h-screen">
+    <Header />
+    <main
+      class=":uno: mx-auto py-2 flex flex-1 flex-col gap-2 max-w-5xl w-full"
+    >
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --background: oklch(0.2826 0.0388 249.34);
+    --primary: oklch(0.9612 0 0);
+    --secondary: oklch(0.688 0.0388 249.34);
+    --accent: oklch(0.933 0.0697 91.23);
+    --border: oklch(0.4491 0.0388 249.34);
+  }
+
+  body {
+    @apply bg-background text-primary;
+  }
+</style>

@@ -1,0 +1,29 @@
+---
+import penger from "~/assets/penger.png";
+---
+
+<footer class=":uno: border-(t-1 border)">
+  <div class=":uno: mx-auto px-4 py-2 flex max-w-5xl">
+    <div class=":uno: flex flex-1 gap-2">
+      <a
+        class=":uno: i-mdi-github opacity-50 size-8 transition-opacity hover:opacity-100"
+        href="https://github.com/oxylume"
+        title="Github"
+      ></a>
+      <a
+        class=":uno: i-mdi-bug opacity-50 size-8 transition-opacity hover:opacity-100"
+        href="https://github.com/oxylume/web/issues/new"
+        title="Report a bug"
+      ></a>
+    </div>
+    <div class=":uno: flex gap-2">
+      <a
+        class=":uno: opacity-50 size-8 transition brightness-0 invert hover:(opacity-100 brightness-100 invert-0)"
+        href="https://penger.city"
+        title="Penger"
+      >
+        <img src={penger.src} />
+      </a>
+    </div>
+  </div>
+</footer>

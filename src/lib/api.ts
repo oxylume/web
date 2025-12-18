@@ -4,6 +4,7 @@ import { API_URL } from "astro:env/client"
 const siteSchema = z.object({
   domain: z.string(),
   unicode: z.string(),
+  address: z.string(),
   accessible: z.boolean(),
   inStorage: z.boolean(),
   checkedUtime: z.number(),

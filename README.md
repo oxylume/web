@@ -7,18 +7,18 @@ SSG website built with [Astro](https://astro.build) and [Svelte](https://svelte.
 if you love this project and want to support its development you can donate on this TON address
 `ishoneypot.ton` or `UQA705AUWErQe9Ur56CZz-v6N9J2uw298w-31ZCu475hT8U4`
 
-## setup & run
-to actually use a self-hosted instance of this website you are required to run [index service](https://github.com/oxylume/index)
-
-### prerequisites
+## prerequisites
 - pnpm
 
+## usage
+to actually use a self-hosted instance of this website you are required to run [index service](https://github.com/oxylume/index)
+
+### quick start
 install deps
 ```bash
 pnpm i
 ```
 
-#### start app
 change [environment variables](#environment-variables) if required (defaults work fine)
 
 run dev server
@@ -30,20 +30,20 @@ or build static website
 ```bash
 pnpm build
 ```
-build can be found in "dist/" directory
+build can be found in `dist/` directory
 
 preview build
 ```bash
 pnpm preview
 ```
 
-#### lint
+### lint
 dry run
 ```bash
 pnpm lint
 ```
 
-auto fix what possible
+auto fix everything possible
 ```bash
 pnpm lint:fix
 ```

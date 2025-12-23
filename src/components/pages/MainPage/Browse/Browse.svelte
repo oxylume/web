@@ -11,6 +11,8 @@
   import type { ListOptions } from "~/lib/api"
   import { onMount } from "svelte"
   import debounce from "~/lib/debounce"
+  import Random from "../Random/Random.svelte"
+  import Disclaimer from "./Disclaimer.svelte"
   import Filters from "./Filters.svelte"
   import Sites from "./Sites.svelte"
 
@@ -25,24 +27,39 @@
     spam: false,
   })
   let placeholder = $state("")
-
-  onMount(() => {
-    placeholder = placeholders[Math.floor(Math.random() * placeholders.length)]
-  })
+  let disclaimerAccepted = $state(true)
 
   const setSearch = debounce((value: string) => {
     filters.search = value
   }, 300)
+
+  function onDisclaimerAccepted() {
+    disclaimerAccepted = true
+    localStorage.setItem("disclaimer", "true")
+  }
+
+  onMount(() => {
+    placeholder = placeholders[Math.floor(Math.random() * placeholders.length)]
+
+    const saved = localStorage.getItem("disclaimer")
+    disclaimerAccepted = saved === "true"
+  })
 </script>
 
-<div class=":uno: flex flex-col gap-2 w-full">
-  <div class=":uno: mx-4 p-2 border-(1 border) rounded-md flex flex-1 gap-2 items-center">
-    <span title="Search" class="i-carbon-search text-secondary"></span>
-    <input
-      class=":uno: outline-none flex-1 placeholder:text-secondary"
-      placeholder={placeholder}
-      oninput={e => setSearch(e.currentTarget.value)}
-    />
+<div class=":uno: flex flex-col gap-2 w-full relative">
+  {#if !disclaimerAccepted}
+    <Disclaimer onAccept={onDisclaimerAccepted} />
+  {/if}
+  <div class=":uno: mx-4 flex gap-2">
+    <div class=":uno: p-2 border-(1 border) rounded-md flex flex-1 gap-2 items-center">
+      <span title="Search" class="i-carbon-search text-secondary"></span>
+      <input
+        class=":uno: outline-none flex-1 placeholder:text-secondary"
+        placeholder={placeholder}
+        oninput={e => setSearch(e.currentTarget.value)}
+      />
+    </div>
+    <Random />
   </div>
   <Filters
     bind:sort={filters.sort}

@@ -41,6 +41,11 @@ export type ListOptions = FilterOptions & {
 }
 
 export function wrapGateway(url: string): string {
+  for (const zone of domainZones) {
+    if (url.endsWith(zone)) {
+      url = `${url.slice(0, -zone.length)}${zone.replaceAll(".", "-")}`
+    }
+  }
   const i = GATEWAY_URL.indexOf("://")
   if (i < 0)
     return `${url}.${GATEWAY_URL}`

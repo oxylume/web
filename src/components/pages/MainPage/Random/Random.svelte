@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { settings } from "~/layouts/settings/Settings.svelte";
+  import { settings } from "~/layouts/settings/Settings.svelte"
   import { fetchRandomSite, wrapGateway } from "~/lib/api"
 
   let isFetching = false

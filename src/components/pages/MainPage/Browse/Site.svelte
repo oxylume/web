@@ -1,6 +1,6 @@
 <script lang="ts" module>
-  import { settings } from "~/layouts/settings/Settings.svelte";
   import type { DomainZone } from "~/lib/api"
+  import { settings } from "~/layouts/settings/Settings.svelte"
   import { domainZones, wrapGateway } from "~/lib/api"
 
   const tldColors: Record<DomainZone, string> = {

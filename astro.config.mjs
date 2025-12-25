@@ -14,7 +14,7 @@ export default defineConfig({
   env: {
     schema: {
       API_URL: envField.string({ context: "client", access: "public", default: "http://localhost:8081" }),
-      GATEWAY_URL: envField.string({ context: "client", access: "public", default: "http://localhost:8082"})
+      GATEWAY_URL: envField.string({ context: "client", access: "public", default: "http://localhost:8082" }),
     },
   },
 })

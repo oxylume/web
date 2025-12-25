@@ -49,9 +49,10 @@ pnpm lint:fix
 ```
 
 ## environment variables
-| name | default | note |
-| --- | --- | --- |
-| `API_URL` | http://localhost:8081 | [index service](https://github.com/oxylume/index) url to fetch sites data from
+| name          | default | note |
+| ------------- | --- | --- |
+| `API_URL`     | http://localhost:8081 | [index service](https://github.com/oxylume/index) url to fetch sites data from
+| `GATEWAY_URL` | http://localhost:8082 | gateway with a subdomain-based resolution (also provided by index service)
 
 ### set using `.env` file
 create `.env` file in the project's directory

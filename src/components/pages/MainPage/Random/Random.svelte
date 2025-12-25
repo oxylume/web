@@ -1,12 +1,14 @@
 <script lang="ts">
-  import { fetchRandomSite } from "~/lib/api"
+  import { settings } from "~/layouts/settings/Settings.svelte";
+  import { fetchRandomSite, wrapGateway } from "~/lib/api"
 
   let isFetching = false
 
   function visitRandom() {
     isFetching = true
     fetchRandomSite().then((site) => {
-      window.open(`http://${site.domain}`, "_blank", "noopener")
+      const link = settings.useProxy ? `http://${site.domain}` : wrapGateway(site.domain)
+      window.open(link, "_blank", "noopener")
     }).finally(() => {
       isFetching = false
     })

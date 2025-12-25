@@ -1,6 +1,7 @@
 <script lang="ts" module>
+  import { settings } from "~/layouts/settings/Settings.svelte";
   import type { DomainZone } from "~/lib/api"
-  import { domainZones } from "~/lib/api"
+  import { domainZones, wrapGateway } from "~/lib/api"
 
   const tldColors: Record<DomainZone, string> = {
     ".ton": "bg-sky-600",
@@ -38,7 +39,7 @@
 
 <a
   class=":uno: group px-4 py-3 border-(1 border) rounded-lg flex flex-col gap-2 h-24 w-full cursor-pointer items-center justify-center"
-  href={`http://${domain}`}
+  href={settings.useProxy ? `http://${domain}` : wrapGateway(domain)}
 >
   <div class=":uno: text-center flex flex-1 flex-col w-full justify-center" title={unicode}>
     <div class=":uno: text-lg/5 w-full whitespace-nowrap text-ellipsis overflow-hidden">

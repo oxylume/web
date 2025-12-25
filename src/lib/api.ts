@@ -1,5 +1,5 @@
 import { z } from "astro/zod"
-import { API_URL } from "astro:env/client"
+import { API_URL, GATEWAY_URL } from "astro:env/client"
 
 const siteSchema = z.object({
   domain: z.string(),
@@ -38,6 +38,13 @@ export interface FilterOptions {
 }
 export type ListOptions = FilterOptions & {
   search?: string
+}
+
+export function wrapGateway(url: string): string {
+  const i = GATEWAY_URL.indexOf("://")
+  if (i < 0)
+    return `${url}.${GATEWAY_URL}`
+  return `${GATEWAY_URL.slice(0, i)}://${url}.${GATEWAY_URL.slice(i + "://".length)}`
 }
 
 export async function fetchSiteStats(): Promise<StatsResponse> {

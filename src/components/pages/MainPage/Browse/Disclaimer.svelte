@@ -6,7 +6,7 @@
   const { onAccept }: Props = $props()
 </script>
 
-<div class=":uno: backdrop-blur-xs absolute inset-0 z-5 h-[max(100%,500px)] flex flex-col items-center justify-center gap-2 px-[12%] py-4 text-center text-lg">
+<div class=":uno: backdrop-blur-[2px] absolute inset-0 z-5 h-[max(100%,500px)] flex flex-col items-center justify-center gap-2 px-[12%] py-4 text-center text-lg">
   <h1 class=":uno: text-3xl text-red-500 font-bold">DISCLAIMER</h1>
   <p>TON Sites ARE user-produced content. This website has no control over, and provides no warranty that subsequent websites will not contain any disturbing and/or illegal content</p>
   <button

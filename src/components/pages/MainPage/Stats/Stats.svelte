@@ -19,7 +19,7 @@
   </div>
 {/snippet}
 
-<div class=":uno: mx-4 py-2 text-center border-(1 border) rounded-lg flex gap-2 justify-evenly">
+<div class=":uno: mx-4 flex justify-evenly gap-2 border-(1 border) rounded-lg py-2 text-center">
   {@render stat("Total domains", stats.data?.domains)}
   {@render stat("Total sites", stats.data?.sites)}
   {@render stat("Active sites", stats.data?.active)}

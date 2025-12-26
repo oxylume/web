@@ -46,15 +46,15 @@
   })
 </script>
 
-<div class=":uno: flex flex-col gap-2 w-full relative">
+<div class=":uno: relative w-full flex flex-col gap-2">
   {#if !disclaimerAccepted}
     <Disclaimer onAccept={onDisclaimerAccepted} />
   {/if}
   <div class=":uno: mx-4 flex gap-2">
-    <div class=":uno: p-2 border-(1 border) rounded-md flex flex-1 gap-2 items-center">
+    <div class=":uno: flex flex-1 items-center gap-2 border-(1 border) rounded-md p-2">
       <span title="Search" class="i-carbon-search text-secondary"></span>
       <input
-        class=":uno: outline-none flex-1 placeholder:text-secondary"
+        class=":uno: flex-1 bg-transparent outline-none placeholder:text-secondary"
         placeholder={placeholder}
         oninput={e => setSearch(e.currentTarget.value)}
       />

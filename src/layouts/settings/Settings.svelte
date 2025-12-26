@@ -25,33 +25,35 @@
 </script>
 
 <DropdownMenu.Root>
-  <DropdownMenu.Trigger class=":uno: i-mdi-cog opacity-50 size-6 transition-opacity data-[state=open]:opacity-100 hover:opacity-100">
+  <DropdownMenu.Trigger class=":uno: i-mdi-cog size-6 opacity-50 transition-opacity data-[state=open]:opacity-100 hover:opacity-100">
   </DropdownMenu.Trigger>
   <DropdownMenu.Portal>
     <DropdownMenu.Content
-      class=":uno: border-(1 border) rounded-md bg-background flex flex-col z-1000 overflow-hidden"
+      class=":uno: z-1000 flex flex-col overflow-hidden border-(1 border) rounded-md bg-background"
       sideOffset={8}
       align="end"
     >
       <DropdownMenu.RadioGroup
         bind:value={() => settings.useProxy ? "proxy" : "gateway", v => settings.useProxy = v === "proxy"}
       >
-        <DropdownMenu.GroupHeading class=":uno: text-sm text-secondary mb-1 px-2 pt-2">
+        <DropdownMenu.GroupHeading class=":uno: mb-1 px-2 pt-2 text-sm text-secondary">
           Open sites via
         </DropdownMenu.GroupHeading>
         <DropdownMenu.RadioItem
-          class={[":uno: p-2 w-full cursor-pointer flex gap-2 items-center text-secondary", "data-[highlighted]:(bg-secondary/40 text-primary) data-[state=checked]:(bg-secondary/20 text-primary)"]}
+          class=":uno: group w-full flex cursor-pointer items-center gap-2 p-2 text-secondary data-[state=checked]:text-primary"
           value="gateway"
         >
-          <div class=":uno: i-carbon-gateway text-secondary size-6"></div>
+          <div class=":uno: i-carbon-gateway size-6 text-secondary"></div>
           Public Gateway
+          <div class=":uno: i-carbon-checkmark invisible size-4 group-data-[state=checked]:visible"></div>
         </DropdownMenu.RadioItem>
         <DropdownMenu.RadioItem
-          class={[":uno: p-2 w-full cursor-pointer flex gap-2 items-center text-secondary", "data-[highlighted]:(bg-secondary/40 text-primary) data-[state=checked]:(bg-secondary/20 text-primary)"]}
+          class=":uno: group w-full flex cursor-pointer items-center gap-2 p-2 text-secondary data-[state=checked]:text-primary"
           value="proxy"
         >
-          <div class=":uno: i-carbon-gateway-vpn text-secondary size-6"></div>
+          <div class=":uno: i-carbon-gateway-vpn size-6 text-secondary"></div>
           TON Proxy
+          <div class=":uno: i-carbon-checkmark invisible size-4 group-data-[state=checked]:visible"></div>
         </DropdownMenu.RadioItem>
       </DropdownMenu.RadioGroup>
     </DropdownMenu.Content>

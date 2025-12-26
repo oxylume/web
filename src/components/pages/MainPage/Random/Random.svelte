@@ -16,7 +16,7 @@
 </script>
 
 <button
-  class=":uno: px-2 border-(2 accent) rounded-lg flex cursor-pointer transition hover:(text-background bg-accent)"
+  class=":uno: flex cursor-pointer border-(2 accent) rounded-lg px-2 transition hover:(bg-accent text-background)"
   title="Open random site"
   onclick={visitRandom}
   disabled={isFetching}

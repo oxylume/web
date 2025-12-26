@@ -50,7 +50,7 @@
   }
 </script>
 
-<div class=":uno: text-sm px-4 flex gap-1 whitespace-nowrap overflow-x-auto no-scrollbar">
+<div class=":uno: flex gap-1 overflow-x-auto whitespace-nowrap px-4 text-sm no-scrollbar">
   <Filter>
     <Label.Root for="sort">Sort by</Label.Root>
     <SingleSelect

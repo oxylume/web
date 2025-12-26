@@ -32,7 +32,7 @@
 </script>
 
 <div class=":uno: mx-4 flex flex-col gap-2">
-  <div class=":uno: gap-2 grid grid-cols-1 w-full md:grid-cols-3 sm:grid-cols-2">
+  <div class=":uno: grid grid-cols-1 w-full gap-2 md:grid-cols-3 sm:grid-cols-2">
     {#if query.isSuccess}
       {#each query.data.pages as pages}
         {#each pages.sites as site (site.domain)}
@@ -43,7 +43,7 @@
   </div>
   {#if query.hasNextPage}
     <div class=":uno: mt-4 flex justify-center">
-      <button class=":uno: button px-4 py-2 rounded-vw" onclick={() => query.fetchNextPage()}>
+      <button class=":uno: button rounded-vw px-4 py-2" onclick={() => query.fetchNextPage()}>
         Load More
       </button>
     </div>

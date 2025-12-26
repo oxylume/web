@@ -38,11 +38,11 @@
 </script>
 
 <a
-  class=":uno: group px-4 py-3 border-(1 border) rounded-lg flex flex-col gap-2 h-24 w-full cursor-pointer items-center justify-center"
+  class=":uno: group h-24 w-full flex flex-col cursor-pointer items-center justify-center gap-2 border-(1 border) rounded-lg px-4 py-3"
   href={settings.useProxy ? `http://${domain}` : wrapGateway(domain)}
 >
-  <div class=":uno: text-center flex flex-1 flex-col w-full justify-center" title={unicode}>
-    <div class=":uno: text-lg/5 w-full whitespace-nowrap text-ellipsis overflow-hidden">
+  <div class=":uno: w-full flex flex-1 flex-col justify-center text-center" title={unicode}>
+    <div class=":uno: w-full overflow-hidden text-ellipsis whitespace-nowrap text-lg/5">
       {unicode}
     </div>
     {#if unicode !== domain}
@@ -51,16 +51,16 @@
       </p>
     {/if}
   </div>
-  <div class=":uno: flex gap-2 w-full">
+  <div class=":uno: w-full flex gap-2">
     {#if accessible}
       <div
-        class=":uno: rounded-full bg-green size-5 relative before:(rounded-full bg-green content-empty inset-0 absolute group-hover:animate-ping)"
+        class=":uno: relative size-5 rounded-full bg-green before:(absolute inset-0 rounded-full bg-green content-empty group-hover:animate-ping)"
         title={`Accessible (last checked at ${new Date(checkedUtime * 1000).toLocaleString()})`}
       ></div>
     {:else}
       <div
         title={`Inaccessible (last checked at ${new Date(checkedUtime * 1000).toLocaleString()})`}
-        class=":uno: rounded-full bg-red-500 size-5 group-hover:animate-pulse"
+        class=":uno: size-5 rounded-full bg-red-500 group-hover:animate-pulse"
       ></div>
     {/if}
     {#if zone}
@@ -69,7 +69,7 @@
       </div>
     {/if}
     {#if inStorage}
-      <div class=":uno: text-xs font-bold px-2 rounded-full bg-indigo-500 inline-flex uppercase items-center">
+      <div class=":uno: inline-flex items-center rounded-full bg-indigo-500 px-2 text-xs font-bold uppercase">
         TON Storage
       </div>
     {/if}

@@ -3,15 +3,15 @@ import Logo from "~/assets/logo.svg"
 import Settings from "./settings/Settings.svelte";
 ---
 
-<nav class=":uno: border-(b-1 border) h-16 w-full">
-  <div class=":uno: mx-auto px-4 flex h-full max-w-5xl">
-    <div class=":uno: flex flex-1 gap-2 h-full">
-      <a class=":uno: flex gap-2 h-full items-center" href="/">
+<nav class=":uno: h-16 w-full border-(b-1 border)">
+  <div class=":uno: mx-auto h-full max-w-5xl flex px-4">
+    <div class=":uno: h-full flex flex-1 gap-2">
+      <a class=":uno: h-full flex items-center gap-2" href="/">
         <Logo class=":uno: size-10" />
-        <h1 class=":uno: text-xl font-extrabold hidden sm:block">Oxylume</h1>
+        <h1 class=":uno: hidden text-xl font-extrabold sm:block">Oxylume</h1>
       </a>
     </div>
-    <div class=":uno: flex gap-2 h-full items-center">
+    <div class=":uno: h-full flex items-center gap-2">
       <Settings client:load />
     </div>
   </div>

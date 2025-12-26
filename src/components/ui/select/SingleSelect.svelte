@@ -24,15 +24,16 @@
     {:else}
       {itemDeselectedLabel ?? deselectedLabel}
     {/if}
-    <span class=":uno: i-carbon-chevron-down text-lg text-secondary ml-auto"></span>
+    <span class=":uno: i-carbon-chevron-down ml-auto text-lg text-secondary"></span>
   </Select.Trigger>
-  <Select.Content class=":uno: border-(1 border) rounded-md bg-background flex flex-col z-1000 overflow-hidden" sideOffset={8} align="end">
+  <Select.Content class=":uno: z-1000 flex flex-col overflow-hidden border-(1 border) rounded-md bg-background" sideOffset={8} align="end">
     {#each items as { value, label, disabled } (value)}
       <Select.Item
-        class={[":uno: p-2 w-full cursor-pointer text-secondary", "data-[highlighted]:(bg-secondary/40 text-primary) data-[selected]:(bg-secondary/20 text-primary)"]}
+        class=":uno: group w-full flex cursor-pointer items-center gap-2 p-2 text-secondary data-[selected]:text-primary"
         {value} {label} {disabled}
       >
         {label}
+        <div class=":uno: i-carbon-checkmark invisible size-4 group-data-[selected]:visible"></div>
       </Select.Item>
     {/each}
   </Select.Content>
